@@ -18,6 +18,7 @@ const modalAuth = document.querySelector('.modal-auth');
 const closeAuth = document.querySelector('.close-auth');
 const logInForm = document.querySelector('#logInForm');
 const loginInput = document.querySelector('#login');
+const passwordInput = document.querySelector('#password');
 const userName = document.querySelector('.user-name');
 const buttonOut = document.querySelector('.button-out');
 
@@ -53,7 +54,7 @@ function autorized () {
 }
 function notAutorized () {
     function logIn (event) {
-        if(loginInput.value)
+        if(loginInput.value && passwordInput.value)
         {
             event.preventDefault();
             login = loginInput.value;
@@ -66,7 +67,7 @@ function notAutorized () {
             logInForm.reset();
             checkAuth();
         } else{
-            alert("Введіть логін");
+            alert("Введіть будь ласка логін та пароль");
             event.preventDefault();
             toogleModalAuth();
         }
