@@ -61,7 +61,7 @@ body {
 }
 .button-auth:hover img,
 .button-out:hover img {
-  content: url(/img/userBlack.svg);
+  content: url(../img/userBlack.svg);
   width: 16px;
   height: 18px;
 }
