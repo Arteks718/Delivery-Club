@@ -24,7 +24,7 @@ const buttonOut = document.querySelector(".button-out");
 
 const cardsRestaurants = document.querySelector(".cards");
 const containerPromo = document.querySelector(".container-promo");
-const restaraunts = document.querySelector(".restaraunts");
+const restaraunts = document.querySelector(".restaraunt");
 const menu = document.querySelector(".menu");
 const logo = document.querySelector(".logo");
 const cardsMenu = document.querySelector(".cards-menu");
@@ -149,15 +149,14 @@ function createCardGood() {
   card.insertAdjacentHTML(
     "beforeend",
     `
-  <img src="img/card1.jpg" alt="card" class="card-image" />
+  <img src="img/card6.png" alt="card" class="card-image" />
   <div class="card-text">
     <div class="card-heading">
-      <h3 class="card-title card-title-reg">Пузата Chicken</h3>
+      <h3 class="card-title card-title-reg">М'ясна BBQ</h3>
     </div>
     <div class="card-info">
       <div class="ingredietns">
-        Ковбаса домашня, картопляне пюре, салат Олів'є, вареники з
-        картоплею
+          Соус BBQ, цибуля маринована, ковбаски, курка маринована, бекон, сир моцарела, кукурудза, часникова олія
       </div>
     </div>
     <div class="card-buttons">
