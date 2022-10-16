@@ -22,7 +22,15 @@ const passwordInput = document.querySelector("#password");
 const userName = document.querySelector(".user-name");
 const buttonOut = document.querySelector(".button-out");
 
+const cardsRestaurants = document.querySelector(".cards");
+const containerPromo = document.querySelector(".container-promo");
+const restaraunts = document.querySelector(".restaraunts");
+const menu = document.querySelector(".menu");
+const logo = document.querySelector(".logo");
+const cardsMenu = document.querySelector(".cards-menu");
+
 let login = localStorage.getItem("gloDelivery");
+
 function toogleModalAuth() {
   modalAuth.classList.toggle("is-open");
   if (modalAuth.classList.contains("is-open")) {
@@ -103,4 +111,115 @@ function checkAuth() {
     notAutorized();
   }
 }
+
+function createCardRestaurant() {
+  const card = `
+  <a
+    class="card wow animate__animated animate__fadeInUp"
+    data-wow-delay="0.6s"
+  >
+    <img src="img/card1.jpg" alt="card" class="card-image" />
+    <div class="card-text">
+      <div class="card-heading">
+        <h3 class="card-title">QI Pizza</h3>
+        <span class="card-tag tag">45 хв</span>
+      </div>
+      <div class="card-info">
+        <div class="rating">
+          <img src="img/star.svg" alt="rating" class="rating-star" />
+          4.5
+        </div>
+        <div class="price">від 100 грн</div>
+        <div class="category">Піцца</div>
+      </div>
+    </div>
+  </a>
+  `;
+
+  cardsRestaurants.insertAdjacentHTML("beforeend", card);
+}
+
+function createCardGood() {
+  const card = document.createElement("div");
+  card.className = "card wow animate__animated animate__fadeInUp";
+  card.setAttribute("data-wow-delay", "0.2s");
+
+  card.addParametr;
+
+  card.insertAdjacentHTML(
+    "beforeend",
+    `
+  <img src="img/card1.jpg" alt="card" class="card-image" />
+  <div class="card-text">
+    <div class="card-heading">
+      <h3 class="card-title card-title-reg">Пузата Chicken</h3>
+    </div>
+    <div class="card-info">
+      <div class="ingredietns">
+        Ковбаса домашня, картопляне пюре, салат Олів'є, вареники з
+        картоплею
+      </div>
+    </div>
+    <div class="card-buttons">
+      <button class="button button-primary">
+        <span class="button-card-text">В кошик</span>
+        <img
+          src="img/store.svg"
+          alt="shopping-cart"
+          class="card-button-image"
+        />
+      </button>
+      <strong class="card-price-bold">100 грн</strong>
+    </div>
+  </div>
+  `
+  );
+  cardsMenu.insertAdjacentElement("beforeend", card);
+}
+
+function openGoods(event) {
+  const target = event.target;
+
+  const restaraunt = target.closest(".card");
+  if (restaraunt) {
+    cardsMenu.textContent = "";
+
+    containerPromo.classList.add("hide");
+    restaraunts.classList.add("hide");
+    menu.classList.remove("hide");
+
+    createCardGood();
+    createCardGood();
+    createCardGood();
+    createCardGood();
+    createCardGood();
+    createCardGood();
+  }
+}
+
+cardsRestaurants.addEventListener("click", function (event) {
+  if (!login) {
+    toogleModalAuth();
+  } else {
+    openGoods(event);
+  }
+});
+
+logo.addEventListener("click", function () {
+  containerPromo.classList.remove("hide");
+  restaraunts.classList.remove("hide");
+  menu.classList.add("hide");
+});
+
+cartButton.addEventListener("click", toggleModal);
+
+close.addEventListener("click", toggleModal);
+
 checkAuth();
+
+createCardRestaurant();
+createCardRestaurant();
+createCardRestaurant();
+createCardRestaurant();
+createCardRestaurant();
+createCardRestaurant();
