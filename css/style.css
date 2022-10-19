@@ -54,14 +54,15 @@ body {
 }
 .button-auth:hover,
 .button-out:hover,
-.button-login:hover {
+.button-login:hover,
+.button-primary:hover {
   background: #fcfcfc;
   color: #7a7a7a;
   border: 1px solid #dcdcdc;
 }
 .button-auth:hover img,
 .button-out:hover img {
-  content: url(../img/userBlack.svg);
+  content: url(/img/userBlack.svg);
   width: 16px;
   height: 18px;
 }
@@ -79,6 +80,10 @@ body {
   border: 1px solid #1890ff;
   color: #ffffff;
   margin-right: 10px;
+  cursor: pointer;
+}
+.button-primary:hover > img {
+  content: url(/img/shopping-cart.svg);
 }
 .button-icon {
   margin-right: 6px;
@@ -90,13 +95,35 @@ body {
 .button-text {
   vertical-align: middle;
 }
-
+.footer-login {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+}
+.button-login {
+  background: #1890ff;
+  border: 1px solid #1890ff;
+  color: #ffffff;
+}
 .promo {
   box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
   background: #fff1b8 url(../img/pngegg.png) no-repeat right 20px / 550px;
   border-radius: 10px;
   padding: 68px 70px;
   margin-bottom: 56px;
+}
+.pizza {
+  background: #fff1b8 url(../img/promo/pngegg.png) no-repeat right 20px / 550px;
+}
+.kebab {
+  background: #b8e5ff url(../img/promo/kebab.png) no-repeat right 20px / 550px;
+}
+.vegetables {
+  background: #b8ffc7 url(../img/promo/vegetables.png) no-repeat right 0 / 850px;
+}
+.sushi {
+  background: #ffb8ff url(../img/promo/sushi.png) no-repeat right 20px / 550px;
 }
 .promo-title {
   font-style: normal;
@@ -145,8 +172,11 @@ body {
   text-decoration: none;
 }
 .card-image {
-  width: 384px;
-  height: 250px;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   object-fit: cover;
 }
 .card-text {
@@ -201,6 +231,7 @@ body {
   font-weight: 700;
   font-size: 18px;
   line-height: 32px;
+  display: flex;
 }
 .price,
 .category {
@@ -333,20 +364,12 @@ body {
   padding-right: 8px;
 }
 #login {
-  margin-left: 20px;
+  margin-left: 14px;
 }
 .button-login {
-  background: #1890ff;
-  border: 1px solid #1890ff;
-  color: #ffffff;
   margin-top: 45px;
 }
-.footer-login {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: flex-end;
-}
+
 .food-row {
   display: flex;
   align-items: flex-start;
@@ -415,13 +438,30 @@ body {
 .hide * {
   display: none;
 }
+.red {
+  background-color: lightpink;
+}
+.swiper {
+  z-index: 0;
+}
+
 @media (max-width: 1366px) {
   .container {
     max-width: 960px;
   }
   .promo {
-    background-position: right 50px;
-    background-size: 375px;
+    background-position: right -51px;
+    background-size: 400px;
+  }
+  .kebab {
+    background: #b8e5ff url(../img/promo/kebab.png) no-repeat right 67px / 537px;
+  }
+  .vegetables {
+    background: #b8ffc7 url(../img/promo/vegetables.png) no-repeat right 0 /
+      850px;
+  }
+  .sushi {
+    background: #ffb8ff url(../img/promo/sushi.png) no-repeat right 20px / 550px;
   }
   .card .rating {
     margin-right: 15px;
@@ -438,7 +478,17 @@ body {
   .promo {
     padding: 50px;
     background-position: top 300px;
-    background-size: 300px;
+    background-size: 380px;
+  }
+  .kebab {
+    background: #b8e5ff url(../img/promo/kebab.png) no-repeat right -5px / 472px;
+  }
+  .vegetables {
+    background: #b8ffc7 url(../img/promo/vegetables.png) no-repeat right 0 /
+      726px;
+  }
+  .sushi {
+    background: #ffb8ff url(../img/promo/sushi.png) no-repeat right 60px / 381px;
   }
   .promo-text {
     font-size: 18px;
@@ -468,6 +518,16 @@ body {
     background: #fff1b8 url(../img/pngegg2.png) no-repeat right 20px / 550px;
     background-position: top -3px right -182px;
     background-size: 346px;
+  }
+  .kebab {
+    background: #b8e5ff url(../img/promo/kebab.png) no-repeat right 46px / 346px;
+  }
+  .vegetables {
+    background: #b8ffc7 url(../img/promo/vegetables.png) no-repeat right 0 /
+      726px;
+  }
+  .sushi {
+    background: #ffb8ff url(../img/promo/sushi.png) no-repeat right 57px / 319px;
   }
   .promo-title {
     font-size: 24px;
